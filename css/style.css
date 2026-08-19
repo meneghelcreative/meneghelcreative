@@ -251,6 +251,34 @@ h3{ font-size: 1.3rem; margin-bottom: 14px; }
 @media (prefers-reduced-motion: reduce){
   .hero h1 span:hover{ animation: none; }
 }
+
+/* ---------- Easter egg: nave da Xuxa ---------- */
+.xuxa-hover{
+  position: relative;
+  cursor: default;
+}
+.xuxa-ship{
+  position: absolute;
+  top: -16px;
+  left: 50%;
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-70px, 8px) scale(0.5) rotate(-8deg);
+}
+.xuxa-hover:hover .xuxa-ship{
+  animation: xuxa-fly 1.3s ease-in-out;
+}
+@keyframes xuxa-fly{
+  0%{   opacity: 0; transform: translate(-70px, 8px) scale(0.5) rotate(-8deg); }
+  12%{  opacity: 1; }
+  50%{  opacity: 1; transform: translate(0, -6px) scale(0.8) rotate(3deg); }
+  88%{  opacity: 1; }
+  100%{ opacity: 0; transform: translate(70px, 8px) scale(0.5) rotate(8deg); }
+}
+@media (prefers-reduced-motion: reduce){
+  .xuxa-hover:hover .xuxa-ship{ animation: none; opacity: 0; }
+}
+
 .hero-sub{
   color: var(--muted);
   font-size: 1.08rem;
@@ -310,6 +338,10 @@ h3{ font-size: 1.3rem; margin-bottom: 14px; }
   color: var(--muted);
   margin-bottom: 18px;
   max-width: 640px;
+}
+.sobre-content p strong{
+  color: var(--white);
+  font-weight: 600;
 }
 .sobre-content p:last-child{ margin-bottom: 0; }
 
