@@ -33,4 +33,17 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
   }
+
+  // Sombra branca que acompanha o cursor pelo site inteiro
+  if (window.matchMedia("(pointer: fine)").matches) {
+    const glow = document.createElement("div");
+    glow.className = "cursor-glow";
+    document.body.appendChild(glow);
+
+    document.addEventListener("mousemove", (e) => {
+      glow.style.transform = `translate(${e.clientX}px, ${e.clientY}px) translate(-50%, -50%)`;
+      glow.classList.add("is-active");
+    });
+    document.addEventListener("mouseleave", () => glow.classList.remove("is-active"));
+  }
 });
