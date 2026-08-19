@@ -14,9 +14,9 @@
   --pink: #ff678a;
   --radius: 14px;
   --max-w: 1120px;
-  --font-display: 'Bricolage Grotesque', sans-serif;
-  --font-brand: 'Bricolage Grotesque', sans-serif;
-  --font-body: 'Bricolage Grotesque', sans-serif;
+  --font-display: 'Anton', sans-serif;
+  --font-brand: 'Jost', sans-serif;
+  --font-body: 'Inter', sans-serif;
 }
 
 *{ box-sizing: border-box; margin:0; padding:0; }
@@ -80,7 +80,7 @@ ul{ list-style: none; }
 
 h1, h2, h3{
   font-family: var(--font-display);
-  font-weight: 700;
+  font-weight: 400;
   text-transform: uppercase;
   letter-spacing: 0.01em;
   line-height: 1.05;
@@ -141,7 +141,20 @@ h3{ font-size: 1.3rem; margin-bottom: 14px; }
   gap: 10px;
 }
 .brand-icon{ height: 24px; width: auto; }
+.brand-wordmark{
+  display: flex;
+  align-items: flex-end;
+  gap: 5px;
+}
 .brand-word{ height: 15px; width: auto; margin-top: 2px; }
+.brand-tagline{
+  font-family: var(--font-brand);
+  font-size: 0.6rem;
+  text-transform: lowercase;
+  letter-spacing: 0.03em;
+  color: var(--muted-2);
+  margin-bottom: 2px;
+}
 
 .main-nav{
   display: flex;
@@ -188,7 +201,14 @@ h3{ font-size: 1.3rem; margin-bottom: 14px; }
   padding: 120px 0 90px;
   border-bottom: 1px solid var(--line);
 }
-.hero-inner{ max-width: 760px; }
+.hero-inner{
+  max-width: 760px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
 
 .hero-wave{
   color: var(--white);
@@ -277,7 +297,6 @@ h3{ font-size: 1.3rem; margin-bottom: 14px; }
 }
 .service-card .package-name{
   font-family: var(--font-display);
-  font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.01em;
   font-size: 1.35rem;
