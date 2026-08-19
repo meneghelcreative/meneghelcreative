@@ -230,33 +230,11 @@ h3{ font-size: 1.3rem; margin-bottom: 14px; }
 .hero-wave-svg.is-in-view{
   clip-path: inset(0 0% 0 0);
 }
-.hero-wave-glow{
-  position: absolute;
-  top: 50%;
-  left: 0%;
-  width: 13%;
-  aspect-ratio: 446 / 463;
-  transform: translate(-50%, -50%) scale(0.3) rotate(0deg);
-  opacity: 0;
-  pointer-events: none;
-  filter: drop-shadow(0 0 8px rgba(255,255,255,0.65));
-}
-.hero-wave-glow img{ display: block; width: 100%; height: 100%; }
-.hero-wave-glow.is-in-view{
-  animation: wave-glow-travel 1.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-}
-@keyframes wave-glow-travel{
-  0%{   left: 0%;   opacity: 0;   transform: translate(-50%, -50%) scale(0.3) rotate(0deg); }
-  10%{  opacity: 1; }
-  92%{  opacity: 0.95; }
-  100%{ left: 100%; opacity: 0;   transform: translate(-50%, -50%) scale(1.3) rotate(300deg); }
-}
 @media (prefers-reduced-motion: reduce){
   .hero-wave-svg{
     clip-path: inset(0 0% 0 0) !important;
     transition: none !important;
   }
-  .hero-wave-glow{ display: none !important; }
   .hero h1 span{ animation: none !important; }
 }
 .hero h1 span{
@@ -265,6 +243,23 @@ h3{ font-size: 1.3rem; margin-bottom: 14px; }
   display: inline-block;
   cursor: default;
   text-shadow: 0 0 10px rgba(255,255,255,0.3);
+}
+.momento-disco{
+  position: absolute;
+  top: -0.85em;
+  right: -0.15em;
+  width: 0.6em;
+  height: auto;
+  filter: drop-shadow(0 0 6px rgba(255,255,255,0.5));
+  animation: momento-disco-sway 3.4s ease-in-out infinite;
+  transform-origin: 50% -20%;
+}
+@keyframes momento-disco-sway{
+  0%, 100%{ transform: rotate(-6deg); }
+  50%{ transform: rotate(6deg); }
+}
+@media (prefers-reduced-motion: reduce){
+  .momento-disco{ animation: none; }
 }
 .hero h1 span::before{
   content: "momento";
