@@ -15,8 +15,8 @@
   --radius: 14px;
   --max-w: 1120px;
   --font-display: 'Anton', sans-serif;
-  --font-brand: 'Jost', sans-serif;
-  --font-body: 'Inter', sans-serif;
+  --font-brand: 'Bricolage Grotesque', sans-serif;
+  --font-body: 'Bricolage Grotesque', sans-serif;
 }
 
 *{ box-sizing: border-box; margin:0; padding:0; }
