@@ -6,13 +6,22 @@ document.addEventListener("DOMContentLoaded", () => {
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
   // Animação de entrada da onda (surge da esquerda, mantém sempre a forma da onda)
+  // Só dispara depois que a imagem realmente carregou, senão a transição
+  // roda "no vazio" enquanto a imagem baixa e o efeito parece cortado.
   const waveSvg = document.querySelector(".hero-wave-svg");
   if (waveSvg) {
-    requestAnimationFrame(() => {
+    const revealWave = () => {
       requestAnimationFrame(() => {
-        waveSvg.classList.add("is-in-view");
+        requestAnimationFrame(() => {
+          waveSvg.classList.add("is-in-view");
+        });
       });
-    });
+    };
+    if (waveSvg.complete && waveSvg.naturalWidth > 0) {
+      revealWave();
+    } else {
+      waveSvg.addEventListener("load", revealWave, { once: true });
+    }
   }
 
   // Menu mobile
