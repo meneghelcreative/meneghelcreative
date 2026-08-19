@@ -168,8 +168,8 @@ h3{ font-size: 1.3rem; margin-bottom: 14px; }
 
 .hero-wave{
   color: var(--white);
-  width: clamp(180px, 26vw, 320px);
-  margin-bottom: 34px;
+  width: clamp(200px, 34vw, 480px);
+  margin-bottom: 38px;
 }
 .hero-wave-svg{
   width: 100%;
@@ -263,52 +263,60 @@ h3{ font-size: 1.3rem; margin-bottom: 14px; }
 }
 .card-fx span{
   position: absolute;
-  bottom: -10%;
+  bottom: -12%;
+  display: block;
   opacity: 0;
 }
+.card-fx span svg{ display: block; }
 .service-card:hover .card-fx span{
   animation-name: fx-rise;
-  animation-duration: 1.9s;
+  animation-duration: 2.1s;
   animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
   animation-fill-mode: forwards;
 }
 @keyframes fx-rise{
-  0%{ opacity: 0; transform: translateY(0) rotate(0deg) scale(0.7); }
-  14%{ opacity: 1; }
-  78%{ opacity: 1; }
-  100%{ opacity: 0; transform: translateY(-230px) rotate(var(--fx-rot, 20deg)) scale(1); }
+  0%{   opacity: 0; transform: translate(0, 0) rotate(0deg) scale(0.55); }
+  10%{  opacity: 1; }
+  38%{  transform: translate(var(--fx-dx1, 12px), -80px) rotate(calc(var(--fx-rot, 24deg) * -0.5)) scale(1); }
+  66%{  opacity: 1; transform: translate(var(--fx-dx2, -12px), -160px) rotate(var(--fx-rot, 24deg)) scale(1); }
+  100%{ opacity: 0; transform: translate(var(--fx-dx2, -12px), -240px) rotate(calc(var(--fx-rot, 24deg) * 1.7)) scale(0.85); }
+}
+@keyframes fx-tumble{
+  0%{   opacity: 0; transform: translate(0, 0) rotate(0deg) scale(0.6); }
+  10%{  opacity: 1; }
+  50%{  transform: translate(var(--fx-dx1, 14px), -110px) rotate(var(--fx-rot, 220deg)) scale(1); }
+  100%{ opacity: 0; transform: translate(var(--fx-dx2, -14px), -240px) rotate(calc(var(--fx-rot, 220deg) * 1.6)) scale(0.8); }
 }
 @media (prefers-reduced-motion: reduce){
   .service-card:hover .card-fx span{ animation: none; }
 }
 
-.fx-lollipop span{ font-size: 1.5rem; --fx-rot: 25deg; }
-.fx-lollipop span:nth-child(1){ left: 8%;  animation-delay: 0s;   --fx-rot: -20deg; }
-.fx-lollipop span:nth-child(2){ left: 26%; animation-delay: 0.12s; --fx-rot: 15deg; }
-.fx-lollipop span:nth-child(3){ left: 48%; animation-delay: 0.04s; --fx-rot: -10deg; }
-.fx-lollipop span:nth-child(4){ left: 68%; animation-delay: 0.2s;  --fx-rot: 22deg; }
-.fx-lollipop span:nth-child(5){ left: 86%; animation-delay: 0.08s; --fx-rot: -18deg; }
+.fx-lollipop span:nth-child(1){ left: 6%;  animation-delay: 0s;    --fx-rot: -22deg; --fx-dx1: 14px;  --fx-dx2: -10px; }
+.fx-lollipop span:nth-child(2){ left: 24%; animation-delay: 0.14s; --fx-rot: 18deg;  --fx-dx1: -10px; --fx-dx2: 16px; }
+.fx-lollipop span:nth-child(3){ left: 46%; animation-delay: 0.05s; --fx-rot: -12deg; --fx-dx1: 12px;  --fx-dx2: -14px; }
+.fx-lollipop span:nth-child(4){ left: 66%; animation-delay: 0.22s; --fx-rot: 25deg;  --fx-dx1: -14px; --fx-dx2: 10px; }
+.fx-lollipop span:nth-child(5){ left: 84%; animation-delay: 0.09s; --fx-rot: -18deg; --fx-dx1: 10px;  --fx-dx2: -16px; }
 
-.fx-rose span{ font-size: 1.4rem; --fx-rot: 18deg; }
-.fx-rose span:nth-child(1){ left: 10%; animation-delay: 0.05s; --fx-rot: -15deg; }
-.fx-rose span:nth-child(2){ left: 30%; animation-delay: 0.18s; --fx-rot: 12deg; }
-.fx-rose span:nth-child(3){ left: 50%; animation-delay: 0s;    --fx-rot: -8deg; }
-.fx-rose span:nth-child(4){ left: 70%; animation-delay: 0.14s; --fx-rot: 20deg; }
-.fx-rose span:nth-child(5){ left: 88%; animation-delay: 0.09s; --fx-rot: -22deg; }
+.fx-rose span:nth-child(1){ left: 8%;  animation-delay: 0.06s; --fx-rot: -16deg; --fx-dx1: 12px;  --fx-dx2: -10px; }
+.fx-rose span:nth-child(2){ left: 28%; animation-delay: 0.2s;  --fx-rot: 14deg;  --fx-dx1: -10px; --fx-dx2: 14px; }
+.fx-rose span:nth-child(3){ left: 48%; animation-delay: 0s;    --fx-rot: -9deg;  --fx-dx1: 10px;  --fx-dx2: -12px; }
+.fx-rose span:nth-child(4){ left: 68%; animation-delay: 0.16s; --fx-rot: 21deg;  --fx-dx1: -12px; --fx-dx2: 10px; }
+.fx-rose span:nth-child(5){ left: 86%; animation-delay: 0.1s;  --fx-rot: -20deg; --fx-dx1: 10px;  --fx-dx2: -14px; }
 
 .fx-confetti span{
-  width: 7px;
-  height: 13px;
+  width: 8px;
+  height: 14px;
   border-radius: 2px;
 }
-.fx-confetti span:nth-child(1){ left: 6%;  background: #ffd166; animation-delay: 0s;    --fx-rot: 340deg; }
-.fx-confetti span:nth-child(2){ left: 18%; background: #ef476f; animation-delay: 0.1s;  --fx-rot: 200deg; }
-.fx-confetti span:nth-child(3){ left: 32%; background: #ffffff; animation-delay: 0.05s; --fx-rot: 260deg; }
-.fx-confetti span:nth-child(4){ left: 46%; background: #06d6a0; animation-delay: 0.16s; --fx-rot: 180deg; }
-.fx-confetti span:nth-child(5){ left: 58%; background: #118ab2; animation-delay: 0.02s; --fx-rot: 300deg; }
-.fx-confetti span:nth-child(6){ left: 70%; background: #ffd166; animation-delay: 0.2s;  --fx-rot: 220deg; }
-.fx-confetti span:nth-child(7){ left: 82%; background: #ef476f; animation-delay: 0.08s; --fx-rot: 320deg; }
-.fx-confetti span:nth-child(8){ left: 92%; background: #ffffff; animation-delay: 0.13s; --fx-rot: 240deg; }
+.service-card:hover .fx-confetti span{ animation-name: fx-tumble; }
+.fx-confetti span:nth-child(1){ left: 6%;  background: #ffd166; animation-delay: 0s;    --fx-rot: 340deg; --fx-dx1: 16px;  --fx-dx2: -8px; }
+.fx-confetti span:nth-child(2){ left: 18%; background: #ef476f; animation-delay: 0.1s;  --fx-rot: 200deg; --fx-dx1: -14px; --fx-dx2: 10px; }
+.fx-confetti span:nth-child(3){ left: 32%; background: #ffffff; animation-delay: 0.05s; --fx-rot: 260deg; --fx-dx1: 12px;  --fx-dx2: -12px; }
+.fx-confetti span:nth-child(4){ left: 46%; background: #06d6a0; animation-delay: 0.16s; --fx-rot: 180deg; --fx-dx1: -16px; --fx-dx2: 8px; }
+.fx-confetti span:nth-child(5){ left: 58%; background: #118ab2; animation-delay: 0.02s; --fx-rot: 300deg; --fx-dx1: 10px;  --fx-dx2: -14px; }
+.fx-confetti span:nth-child(6){ left: 70%; background: #ffd166; animation-delay: 0.2s;  --fx-rot: 220deg; --fx-dx1: -12px; --fx-dx2: 14px; }
+.fx-confetti span:nth-child(7){ left: 82%; background: #ef476f; animation-delay: 0.08s; --fx-rot: 320deg; --fx-dx1: 14px;  --fx-dx2: -10px; }
+.fx-confetti span:nth-child(8){ left: 92%; background: #ffffff; animation-delay: 0.13s; --fx-rot: 240deg; --fx-dx1: -10px; --fx-dx2: 12px; }
 
 .service-card h3,
 .service-card .service-desc,
