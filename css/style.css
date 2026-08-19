@@ -149,9 +149,10 @@ h3{ font-size: 1.3rem; margin-bottom: 14px; }
 .brand-word{ height: 15px; width: auto; margin-top: 2px; }
 .brand-tagline{
   font-family: var(--font-brand);
-  font-size: 0.6rem;
+  font-weight: 200;
+  font-size: 0.62rem;
   text-transform: lowercase;
-  letter-spacing: 0.03em;
+  letter-spacing: 0.1em;
   color: var(--muted-2);
   margin-bottom: 2px;
 }
