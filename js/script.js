@@ -9,11 +9,13 @@ document.addEventListener("DOMContentLoaded", () => {
   // Só dispara depois que a imagem realmente carregou, senão a transição
   // roda "no vazio" enquanto a imagem baixa e o efeito parece cortado.
   const waveSvg = document.querySelector(".hero-wave-svg");
+  const waveGlow = document.querySelector(".hero-wave-glow");
   if (waveSvg) {
     const revealWave = () => {
       requestAnimationFrame(() => {
         requestAnimationFrame(() => {
           waveSvg.classList.add("is-in-view");
+          if (waveGlow) waveGlow.classList.add("is-in-view");
         });
       });
     };

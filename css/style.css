@@ -41,8 +41,8 @@ body{
   height: 260px;
   border-radius: 50%;
   pointer-events: none;
-  background: radial-gradient(circle, rgba(255,255,255,0.13) 0%, rgba(255,255,255,0.05) 42%, rgba(255,255,255,0) 72%);
-  filter: blur(18px);
+  background: radial-gradient(circle, rgba(255,255,255,0.45) 0%, rgba(255,255,255,0.18) 22%, rgba(255,255,255,0.06) 45%, rgba(255,255,255,0) 72%);
+  filter: blur(16px);
   transform: translate(-50%, -50%);
   z-index: 9999;
   opacity: 0;
@@ -215,6 +215,7 @@ h3{ font-size: 1.3rem; margin-bottom: 14px; }
 }
 
 .hero-wave{
+  position: relative;
   color: var(--white);
   width: clamp(200px, 34vw, 480px);
   margin-bottom: 38px;
@@ -229,24 +230,54 @@ h3{ font-size: 1.3rem; margin-bottom: 14px; }
 .hero-wave-svg.is-in-view{
   clip-path: inset(0 0% 0 0);
 }
+.hero-wave-glow{
+  position: absolute;
+  top: 50%;
+  left: 0%;
+  width: 15%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(circle, #ffffff 0%, rgba(255,255,255,0.7) 30%, rgba(255,103,138,0.35) 55%, rgba(255,255,255,0) 72%);
+  filter: blur(6px);
+  transform: translate(-50%, -50%) scale(0.3);
+  opacity: 0;
+  pointer-events: none;
+  mix-blend-mode: screen;
+}
+.hero-wave-glow.is-in-view{
+  animation: wave-glow-travel 1.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+@keyframes wave-glow-travel{
+  0%{   left: 0%;   opacity: 0;   transform: translate(-50%, -50%) scale(0.25); }
+  10%{  opacity: 1; }
+  92%{  opacity: 0.9; }
+  100%{ left: 100%; opacity: 0;   transform: translate(-50%, -50%) scale(1.5); }
+}
 @media (prefers-reduced-motion: reduce){
   .hero-wave-svg{
     clip-path: inset(0 0% 0 0) !important;
     transition: none !important;
   }
+  .hero-wave-glow{ display: none !important; }
+  .hero h1 span{ animation: none !important; }
 }
 .hero h1 span{
-  color: var(--pink);
+  color: #ffffff;
   display: inline-block;
   cursor: default;
+  animation: momento-shine 2.6s ease-in-out infinite;
+}
+@keyframes momento-shine{
+  0%, 100%{ text-shadow: 0 0 10px rgba(255,255,255,0.35), 0 0 22px rgba(255,255,255,0.15); }
+  50%{ text-shadow: 0 0 20px rgba(255,255,255,0.8), 0 0 44px rgba(255,255,255,0.4), 0 0 72px rgba(255,255,255,0.15); }
 }
 .hero h1 span:hover{
   animation: momento-flash 0.6s ease;
 }
 @keyframes momento-flash{
-  0%{ color: var(--pink); text-shadow: none; }
-  25%{ color: #ffffff; text-shadow: 0 0 18px rgba(255,255,255,0.95), 0 0 46px rgba(255,103,138,0.7); }
-  100%{ color: var(--pink); text-shadow: none; }
+  0%{ color: #ffffff; text-shadow: 0 0 10px rgba(255,255,255,0.35); }
+  30%{ color: #ffffff; text-shadow: 0 0 26px rgba(255,255,255,1), 0 0 60px rgba(255,255,255,0.7); }
+  100%{ color: #ffffff; text-shadow: 0 0 10px rgba(255,255,255,0.35); }
 }
 @media (prefers-reduced-motion: reduce){
   .hero h1 span:hover{ animation: none; }
@@ -370,6 +401,7 @@ h3{ font-size: 1.3rem; margin-bottom: 14px; }
   font-size: 1.35rem;
   color: var(--pink);
   margin-bottom: 6px;
+  text-align: center;
 }
 .service-card .event-name{
   font-family: var(--font-brand);
