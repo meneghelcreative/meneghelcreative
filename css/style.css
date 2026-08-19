@@ -134,27 +134,27 @@ h3{ font-size: 1.3rem; margin-bottom: 14px; }
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 76px;
+  height: 92px;
 }
 .brand{
   display: flex;
   align-items: center;
   gap: 10px;
 }
-.brand-icon{ height: 30px; width: auto; }
+.brand-icon{ height: 44px; width: auto; }
 .brand-wordmark{
   position: relative;
   display: inline-block;
 }
-.brand-word{ height: 19px; width: auto; display: block; }
+.brand-word{ height: 28px; width: auto; display: block; }
 .brand-tagline{
   position: absolute;
   top: 100%;
   left: 58%;
-  margin-top: 1px;
+  margin-top: 2px;
   font-family: var(--font-brand);
   font-weight: 200;
-  font-size: 0.46rem;
+  font-size: 0.68rem;
   text-transform: lowercase;
   letter-spacing: 0.1em;
   color: var(--muted-2);
