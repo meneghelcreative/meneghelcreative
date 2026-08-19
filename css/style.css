@@ -14,9 +14,9 @@
   --pink: #ff2d78;
   --radius: 14px;
   --max-w: 1120px;
-  --font-display: 'Anton', sans-serif;
-  --font-brand: 'Jost', sans-serif;
-  --font-body: 'Inter', sans-serif;
+  --font-display: 'Bricolage Grotesque', sans-serif;
+  --font-brand: 'Bricolage Grotesque', sans-serif;
+  --font-body: 'Bricolage Grotesque', sans-serif;
 }
 
 *{ box-sizing: border-box; margin:0; padding:0; }
@@ -37,20 +37,20 @@ body{
   position: fixed;
   top: 0;
   left: 0;
-  width: 280px;
-  height: 280px;
+  width: 260px;
+  height: 260px;
   border-radius: 50%;
   pointer-events: none;
-  background: radial-gradient(circle, rgba(255,255,255,0.30) 0%, rgba(255,255,255,0.12) 38%, rgba(255,255,255,0) 72%);
-  filter: blur(2px);
+  background: radial-gradient(circle, rgba(255,255,255,0.13) 0%, rgba(255,255,255,0.05) 42%, rgba(255,255,255,0) 72%);
+  filter: blur(18px);
   transform: translate(-50%, -50%);
   z-index: 9999;
   opacity: 0;
-  mix-blend-mode: screen;
-  transition: opacity 0.25s ease;
+  mix-blend-mode: soft-light;
+  transition: opacity 0.4s ease;
   will-change: transform;
 }
-.cursor-glow.is-active{ opacity: 1; }
+.cursor-glow.is-active{ opacity: 0.8; }
 @media (prefers-reduced-motion: reduce){
   .cursor-glow{ display: none; }
 }
@@ -80,7 +80,7 @@ ul{ list-style: none; }
 
 h1, h2, h3{
   font-family: var(--font-display);
-  font-weight: 400;
+  font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.01em;
   line-height: 1.05;
@@ -277,6 +277,7 @@ h3{ font-size: 1.3rem; margin-bottom: 14px; }
 }
 .service-card .package-name{
   font-family: var(--font-display);
+  font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.01em;
   font-size: 1.35rem;
