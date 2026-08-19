@@ -11,6 +11,7 @@
   --muted: rgba(245,245,245,0.65);
   --muted-2: rgba(245,245,245,0.45);
   --accent: #ffffff;
+  --pink: #ff2d78;
   --radius: 14px;
   --max-w: 1120px;
   --font-display: 'Anton', sans-serif;
@@ -246,10 +247,27 @@ h3{ font-size: 1.3rem; margin-bottom: 14px; }
 }
 .service-card{
   position: relative;
-  background: var(--bg-alt);
-  border: 1px solid var(--line);
+  background: #ffffff;
+  border: 1px solid rgba(10,10,10,0.1);
   border-radius: var(--radius);
   padding: 34px 28px;
+}
+.service-card .package-name{
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+  font-size: 1.35rem;
+  color: var(--pink);
+  margin-bottom: 6px;
+}
+.service-card .event-name{
+  font-family: var(--font-brand);
+  font-weight: 500;
+  text-transform: none;
+  letter-spacing: 0;
+  font-size: 0.95rem;
+  color: rgba(10,10,10,0.55);
+  margin-bottom: 20px;
 }
 
 /* ---------- Card hover fx (pirulitos / confete / rosas) ---------- */
@@ -311,21 +329,22 @@ h3{ font-size: 1.3rem; margin-bottom: 14px; }
 .service-card:hover .fx-confetti span{ animation-name: fx-tumble; }
 .fx-confetti span:nth-child(1){ left: 6%;  background: #ffd166; animation-delay: 0s;    --fx-rot: 340deg; --fx-dx1: 16px;  --fx-dx2: -8px; }
 .fx-confetti span:nth-child(2){ left: 18%; background: #ef476f; animation-delay: 0.1s;  --fx-rot: 200deg; --fx-dx1: -14px; --fx-dx2: 10px; }
-.fx-confetti span:nth-child(3){ left: 32%; background: #ffffff; animation-delay: 0.05s; --fx-rot: 260deg; --fx-dx1: 12px;  --fx-dx2: -12px; }
+.fx-confetti span:nth-child(3){ left: 32%; background: #1a1a1a; animation-delay: 0.05s; --fx-rot: 260deg; --fx-dx1: 12px;  --fx-dx2: -12px; }
 .fx-confetti span:nth-child(4){ left: 46%; background: #06d6a0; animation-delay: 0.16s; --fx-rot: 180deg; --fx-dx1: -16px; --fx-dx2: 8px; }
 .fx-confetti span:nth-child(5){ left: 58%; background: #118ab2; animation-delay: 0.02s; --fx-rot: 300deg; --fx-dx1: 10px;  --fx-dx2: -14px; }
 .fx-confetti span:nth-child(6){ left: 70%; background: #ffd166; animation-delay: 0.2s;  --fx-rot: 220deg; --fx-dx1: -12px; --fx-dx2: 14px; }
 .fx-confetti span:nth-child(7){ left: 82%; background: #ef476f; animation-delay: 0.08s; --fx-rot: 320deg; --fx-dx1: 14px;  --fx-dx2: -10px; }
-.fx-confetti span:nth-child(8){ left: 92%; background: #ffffff; animation-delay: 0.13s; --fx-rot: 240deg; --fx-dx1: -10px; --fx-dx2: 12px; }
+.fx-confetti span:nth-child(8){ left: 92%; background: #1a1a1a; animation-delay: 0.13s; --fx-rot: 240deg; --fx-dx1: -10px; --fx-dx2: 12px; }
 
-.service-card h3,
+.service-card .package-name,
+.service-card .event-name,
 .service-card .service-desc,
 .service-card ul{
   position: relative;
   z-index: 1;
 }
-.service-desc{
-  color: var(--muted);
+.service-card .service-desc{
+  color: rgba(10,10,10,0.6);
   font-size: 0.95rem;
   margin-bottom: 22px;
 }
@@ -335,7 +354,7 @@ h3{ font-size: 1.3rem; margin-bottom: 14px; }
   gap: 10px;
 }
 .service-card li{
-  color: var(--muted);
+  color: rgba(10,10,10,0.6);
   font-size: 0.92rem;
   padding-left: 18px;
   position: relative;
@@ -348,7 +367,7 @@ h3{ font-size: 1.3rem; margin-bottom: 14px; }
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: var(--white);
+  background: #0a0a0a;
 }
 .services-note{
   margin-top: 38px;
