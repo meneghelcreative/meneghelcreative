@@ -244,23 +244,6 @@ h3{ font-size: 1.3rem; margin-bottom: 14px; }
   cursor: default;
   text-shadow: 0 0 10px rgba(255,255,255,0.3);
 }
-.momento-disco{
-  position: absolute;
-  top: -0.85em;
-  right: -0.15em;
-  width: 0.6em;
-  height: auto;
-  filter: drop-shadow(0 0 6px rgba(255,255,255,0.5));
-  animation: momento-disco-sway 3.4s ease-in-out infinite;
-  transform-origin: 50% -20%;
-}
-@keyframes momento-disco-sway{
-  0%, 100%{ transform: rotate(-6deg); }
-  50%{ transform: rotate(6deg); }
-}
-@media (prefers-reduced-motion: reduce){
-  .momento-disco{ animation: none; }
-}
 .hero h1 span::before{
   content: "momento";
   position: absolute;
