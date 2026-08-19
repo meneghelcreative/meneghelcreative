@@ -11,7 +11,7 @@
   --muted: rgba(245,245,245,0.65);
   --muted-2: rgba(245,245,245,0.45);
   --accent: #ffffff;
-  --pink: #ff2d78;
+  --pink: #ff678a;
   --radius: 14px;
   --max-w: 1120px;
   --font-display: 'Bricolage Grotesque', sans-serif;
@@ -211,7 +211,7 @@ h3{ font-size: 1.3rem; margin-bottom: 14px; }
     transition: none !important;
   }
 }
-.hero h1 span{ color: var(--muted); }
+.hero h1 span{ color: var(--pink); }
 .hero-sub{
   color: var(--muted);
   font-size: 1.08rem;
